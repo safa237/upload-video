@@ -1,0 +1,223 @@
+.upload-progress-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    transform: translateY(120%);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 999;
+    direction: ltr;
+  
+    &.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  
+    .upload-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8f9fa;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #333;
+  
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+  
+        i {
+          font-size: 0.9rem;
+          cursor: pointer;
+          color: #6c757d;
+        }
+      }
+  
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+  
+        .progress-percent {
+          font-size: 0.85rem;
+          color: #007bff;
+          font-weight: 600;
+        }
+  
+        .cancel-link {
+          font-size: 0.85rem;
+          color: #007bff;
+          text-decoration: none;
+          cursor: pointer;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    .upload-progress {
+      padding: 1rem;
+  
+      .file-info {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+  
+        .file-preview {
+          width: 36px;
+          height: 36px;
+          background: #e9ecef;
+          border-radius: 6px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+  
+          i {
+            font-size: 1.2rem;
+            color: #007bff;
+          }
+        }
+  
+        .file-details {
+          flex: 1;
+  
+          h4 {
+            margin: 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #212529;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 200px;
+          }
+  
+          .file-meta {
+            font-size: 0.8rem;
+            color: #6c757d;
+          }
+        }
+  
+        .upload-spinner {
+          i {
+            font-size: 1.2rem;
+            color: #007bff;
+          }
+        }
+      }
+  
+      .progress-bar {
+        height: 6px;
+        background: #e9ecef;
+        border-radius: 3px;
+        overflow: hidden;
+  
+        .progress-fill {
+          height: 100%;
+          background: #007bff;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+  }
+  
+  .upload-progress-container {
+    &.show {
+      display: block;
+    }
+    .upload-progress-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      background: #f5f5f5;
+      .header-left {
+        display: flex;
+        align-items: center;
+        i {
+          cursor: pointer;
+          margin-right: 10px;
+        }
+      }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        .progress-percent {
+          margin-right: 10px;
+        }
+        .cancel-link {
+          color: #ff0000;
+          text-decoration: none;
+        }
+      }
+    }
+    .upload-progress {
+      padding: 10px;
+      .file-info {
+        display: flex;
+        align-items: center;
+        .file-preview {
+          margin-right: 10px;
+        }
+        .file-details {
+          flex-grow: 1;
+          .file-meta {
+            span {
+              margin-right: 10px;
+            }
+          }
+        }
+        .upload-spinner {
+          i {
+            font-size: 24px;
+          }
+        }
+      }
+      .progress-bar {
+        height: 10px;
+        background: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+        &.pending {
+          background: #f0f0f0;
+        }
+        .progress-fill {
+          height: 100%;
+          background: #4caf50;
+          transition: width 0.3s ease;
+        }
+      }
+    }
+  }
+  .overLayer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    .upload-box {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 350px;
+      z-index: 9999999999999999;
+      border-top-left-radius: 8px;
+      .header {
+        background-color: #f1f7ff;
+        border-radius: inherit;
+        font-size: 1.3rem;
+      }
+    }
+  }

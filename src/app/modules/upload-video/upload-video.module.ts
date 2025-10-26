@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { UploadVideoRoutingModule } from './upload-video-routing.module';
 import { UploadVideoComponent } from './upload-video.component';
+import { ProgressComponent } from './progress/progress.component';
 
 
 @NgModule({
   declarations: [
-    UploadVideoComponent
+    UploadVideoComponent,
+    ProgressComponent
   ],
   imports: [
     CommonModule,

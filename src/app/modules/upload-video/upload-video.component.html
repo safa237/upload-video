@@ -8,14 +8,21 @@
     <form enctype="multipart/form-data">
       <div class="form-group">
         <input
+          #fileInput
           type="file"
-          id="videoFile"
-          name="video"
-          accept="video/mp4,video/avi,video/mov"
-          required
+          (change)="onFileSelected($event)"
+          accept="video/*"
+          [disabled]="progress?.status === 0"
         />
       </div>
-      <button type="submit">Upload Video</button>
     </form>
   </div>
 </div>
+
+   <app-progress
+    *ngIf="isUploading && progress"
+    [progress]="progress.progress"
+    [uploadState]="progress"
+    [uploading]="isUploading"
+    (abort)="onCancelUpload()">
+  </app-progress>

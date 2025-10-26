@@ -1,0 +1,42 @@
+<div class="overLayer" *ngIf="uploading">
+    <div class="upload-progress-container show">
+      <div class="upload-progress-header">
+        <div class="header-left">
+          <i class="fas"
+             [class.fa-chevron-down]="isExpanded"
+             [class.fa-chevron-up]="!isExpanded"
+             (click)="isExpanded = !isExpanded"></i>
+          <span>Uploading 1 item</span>
+        </div>
+  
+        <div class="header-actions">
+          <ng-container *ngIf="progress === 0; else showPercent">
+            <i class="fas fa-circle-notch fa-spin"></i>uploading
+          </ng-container>
+          <ng-template #showPercent>
+            <span class="progress-percent">{{ progress | number:'1.0-2' }} %</span>
+          </ng-template>
+          <!--<a href="#" class="cancel-link" (click)="abort.emit(); $event.preventDefault()">Cancel</a>-->
+        </div>
+      </div>
+  
+      <div class="upload-progress" *ngIf="isExpanded">
+        <div class="file-info">
+          <div class="file-preview">
+            <i class="fas fa-file-video"></i>
+          </div>
+          <div class="file-details">
+            <h4>{{ uploadState?.fileName }}</h4>
+          </div>
+          <div class="upload-spinner">
+            <i class="fas fa-circle-notch fa-spin" *ngIf="progress === 0"></i>
+            <i class="fas fa-check-circle" *ngIf="progress === 100"></i>
+          </div>
+        </div>
+  
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="progress"></div>
+        </div>
+      </div>
+    </div>
+  </div>
