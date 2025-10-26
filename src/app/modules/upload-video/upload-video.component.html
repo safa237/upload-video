@@ -1,0 +1,21 @@
+<div class="main">
+  <button class="go-to-videos-btn" (click)="goToGetVideos()">
+    Back to Get Videos
+  </button>
+
+  <div class="upload-container">
+    <h2>Upload Your Video</h2>
+    <form enctype="multipart/form-data">
+      <div class="form-group">
+        <input
+          type="file"
+          id="videoFile"
+          name="video"
+          accept="video/mp4,video/avi,video/mov"
+          required
+        />
+      </div>
+      <button type="submit">Upload Video</button>
+    </form>
+  </div>
+</div>

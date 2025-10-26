@@ -1,0 +1,121 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.go-to-videos-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #4ecdc4;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.go-to-videos-btn:hover {
+  color: #36a8a1;
+  transform: translateX(-3px);
+}
+
+/* الكارد */
+.upload-container {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+}
+
+h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type='file'] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #555;
+}
+
+input[type='file']::-webkit-file-upload-button {
+  background: #4ecdc4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+input[type='file']::-webkit-file-upload-button:hover {
+  background: #45b7aa;
+}
+
+button[type='submit'] {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #ff6b6b, #ff8e53);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button[type='submit']:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+@media (max-width: 480px) {
+  .upload-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  button,
+  input[type='file']::-webkit-file-upload-button {
+    font-size: 0.9rem;
+  }
+
+  .go-to-videos-btn {
+    font-size: 1rem;
+  }
+}

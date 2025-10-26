@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f8f9fa;
+}
+
+.go-to-videos-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: #4ecdc4;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.go-to-videos-btn:hover {
+  color: #36a8a1;
+  transform: translateX(-3px);
+}
+
